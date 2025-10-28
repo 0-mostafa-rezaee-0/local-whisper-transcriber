@@ -1,6 +1,6 @@
-# Whisper Docker Transcriber
+<h1 align="center">Whisper Docker Transcriber</h1>
 
-<h1 align="center">Transcribe Audio Files in 30 Seconds</h1>
+<h2 align="center">Transcribe Audio Files in 30 Seconds</h2>
 
 **The easiest way to transcribe audio files using AI.** Just drag, drop, and get your transcript.
 
@@ -13,10 +13,9 @@
    - [Option B: API Interface](#option-b-api-interface)
 4. [Supported Formats](#4-supported-formats)
 5. [Command Line (Alternative)](#5-command-line-alternative)
-6. [Need More Details?](#6-need-more-details)
-7. [Why This Tool?](#7-why-this-tool)
-8. [Contributing](#8-contributing)
-9. [License](#9-license)
+6. [Why This Tool?](#6-why-this-tool)
+7. [Contributing](#7-contributing)
+8. [License](#8-license)
 
 ## 1. Ultra-Quick Start (One Command)
 
@@ -26,28 +25,71 @@
 ./start.sh
 ```
 
-That's it! The script will:
-- ✅ Check your system (Docker, GPU)
-- ✅ Build the Docker image automatically
-- ✅ Ask which interface you want (Web/API/CLI)
-- ✅ Start everything and open your browser
-- ✅ Handle all the complexity for you
+### What happens when you run this command:
+
+1. **System Check** (5 seconds)
+   - ✅ Checks if Docker is installed and running
+   - ✅ Detects if you have NVIDIA GPU for faster processing
+   - ✅ Shows colored status messages
+
+2. **Automatic Setup** (2-5 minutes)
+   - ✅ Downloads and builds the Docker image automatically
+   - ✅ Installs all dependencies (Whisper, CUDA, etc.)
+   - ✅ No manual configuration needed
+
+3. **Choose Your Interface**
+   - **Option 1**: Web Interface (Drag & Drop) - Opens browser automatically
+   - **Option 2**: API Interface (For developers) - Opens API docs
+   - **Option 3**: Command Line - Shows usage examples
+
+4. **Start Transcribing** (30 seconds)
+   - ✅ Browser opens automatically to the interface
+   - ✅ Upload your audio file (MP3, WAV, etc.)
+   - ✅ Get instant transcription
+   - ✅ Download results in any format
+
+### Prerequisites (one-time setup):
+- **Docker** installed on your system
+- **NVIDIA GPU** (optional, but recommended for speed)
+
+### Example workflow:
+```bash
+# 1. Run the setup
+./start.sh
+
+# 2. Choose "1" for web interface
+# 3. Browser opens to http://localhost:8501
+# 4. Drag your audio file
+# 5. Get your transcript in 30 seconds!
+```
 
 ## 2. Dev Container (VS Code/Cursor)
 
 **For developers - even easier:**
 
-1. Open this repo in **Cursor** or **VS Code**
-2. Click **"Reopen in Container"** when prompted
-3. Wait for container to start
-4. Run `make start-web` or `make start-api`
-5. Done! 🎉
+### What happens:
+1. **Open in IDE**: Open this repo in **Cursor** or **VS Code**
+2. **Auto-detection**: IDE detects `.devcontainer` folder and shows "Reopen in Container" button
+3. **Automatic setup**: Container builds automatically with all dependencies
+4. **Ready to use**: Run `make start-web` or `make start-api`
+5. **Auto-cleanup**: Container stops when you close the IDE
 
-**Benefits:**
-- ✅ No Docker knowledge needed
-- ✅ Automatic GPU detection
-- ✅ Container stops when you close Cursor
-- ✅ Full development environment ready
+### Benefits:
+- ✅ **Zero Docker knowledge needed** - IDE handles everything
+- ✅ **Automatic GPU detection** - Works with your hardware
+- ✅ **Full development environment** - Python, extensions, everything ready
+- ✅ **Automatic cleanup** - No leftover containers
+- ✅ **Port forwarding** - Web interfaces work automatically
+
+### Example workflow:
+```bash
+# 1. Open repo in Cursor/VS Code
+# 2. Click "Reopen in Container" 
+# 3. Wait 2-3 minutes for setup
+# 4. Run: make start-web
+# 5. Browser opens to http://localhost:8501
+# 6. Start transcribing!
+```
 
 ## 3. Quick Start (3 Steps)
 
@@ -94,23 +136,13 @@ python scripts/app.py your_audio.mp3
 python scripts/app.py your_audio.mp3 --model large-v2 --output-format srt
 ```
 
-## 6. Need More Details?
-- [Full Documentation](docs/README.md)
-- [API Reference](docs/API.md)
-- [Troubleshooting](docs/TROUBLESHOOTING.md)
-- [Advanced Usage](docs/ADVANCED.md)
-
-## 7. Why This Tool?
+## 6. Why This Tool?
 - **Fast**: GPU-accelerated with CUDA support
 - **Accurate**: Uses OpenAI's Whisper large-v3 model
 - **Easy**: Web interface + simple CLI
 - **Flexible**: Multiple output formats
 
-## 8. Contributing
+## 7. Contributing
 Found a bug? Have an idea? [Open an issue](https://github.com/yourusername/whisper-docker-transcriber/issues) or submit a PR!
 
-## 9. License
-MIT License - see [LICENSE](LICENSE) file for details.
 
----
-**Made with love for easy audio transcription**
