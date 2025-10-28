@@ -16,7 +16,7 @@ To test the transcriber with sample audio:
 docker run --gpus all -v $(pwd):/app whisper-transcriber /app/examples/sample_audio.mp3
 
 # Using local Python
-python app.py examples/sample_audio.mp3
+python scripts/app.py examples/sample_audio.mp3
 ```
 
 ## Adding Your Own Audio Files
