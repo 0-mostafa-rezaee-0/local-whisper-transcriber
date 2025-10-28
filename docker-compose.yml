@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  whisper-transcriber:
+    build: .
+    ports:
+      - "8501:8501"  # Streamlit
+      - "8000:8000"  # FastAPI
+    volumes:
+      - .:/app
+      - /tmp:/tmp
+    environment:
+      - WHISPER_MODEL=large-v3
+      - WHISPER_DEVICE=cuda
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    command: >
+      bash -c "
+        echo '🎤 Whisper Transcriber Container Ready!';
+        echo 'Web Interface: http://localhost:8501';
+        echo 'API Interface: http://localhost:8000/docs';
+        echo 'Press Ctrl+C to stop';
+        tail -f /dev/null
+      "
+    stdin_open: true
+    tty: true
