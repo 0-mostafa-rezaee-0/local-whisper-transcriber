@@ -14,7 +14,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 3️⃣ Copy app code
-COPY app.py .
+COPY scripts/ ./scripts/
 
 # 4️⃣ Default command
-CMD ["python3", "app.py"]
+CMD ["python3", "scripts/app.py"]
