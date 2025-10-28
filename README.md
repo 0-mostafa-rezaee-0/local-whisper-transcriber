@@ -56,7 +56,7 @@ Then visit `http://localhost:8000/docs` for interactive API documentation.
 ### Command Line Interface
 
 ```bash
-python app.py <audio_file> [options]
+python scripts/app.py <audio_file> [options]
 
 Options:
   --model {tiny,base,small,medium,large,large-v2,large-v3}
@@ -194,7 +194,8 @@ services:
 whisper-docker-transcriber/
 ├── Dockerfile              # GPU-enabled Docker configuration
 ├── requirements.txt        # Python dependencies
-├── app.py                  # Main application (CLI + API)
+├── scripts/               # Python scripts
+│   └── app.py             # Main application (CLI + API)
 ├── README.md              # This file
 ├── .gitignore             # Git ignore rules
 └── examples/              # Sample audio files
@@ -210,10 +211,10 @@ whisper-docker-transcriber/
 pip install -r requirements.txt
 
 # Run locally
-python app.py audio.mp3
+python scripts/app.py audio.mp3
 
 # Start API server
-python app.py audio.mp3 --api
+python scripts/app.py audio.mp3 --api
 ```
 
 ### Building Custom Images
