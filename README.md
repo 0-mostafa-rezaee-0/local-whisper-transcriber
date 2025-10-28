@@ -1,20 +1,20 @@
 # Whisper Docker Transcriber
 
-<h1 align="center">🎤 GPU-Accelerated Audio Transcription</h1>
+<h1 align="center">GPU-Accelerated Audio Transcription</h1>
 
 A production-ready Docker container for high-performance audio transcription using OpenAI's Whisper model with GPU acceleration. Built with `faster-whisper` for optimal speed and memory efficiency.
 
-## ✨ Features
+## Features
 
-- **🚀 GPU Acceleration**: CUDA support for lightning-fast transcription
-- **📦 Docker Ready**: One-command deployment with Docker
-- **🎯 Multiple Models**: Support for all Whisper model sizes (tiny to large-v3)
-- **🌐 API & CLI**: Both command-line interface and FastAPI web service
-- **📝 Multiple Formats**: Output in text, JSON, or SRT subtitle format
-- **⚡ Optimized**: Uses `faster-whisper` for 2-4x speed improvement
-- **🔧 Flexible**: Configurable compute types and device selection
+- **GPU Acceleration**: CUDA support for lightning-fast transcription
+- **Docker Ready**: One-command deployment with Docker
+- **Multiple Models**: Support for all Whisper model sizes (tiny to large-v3)
+- **API & CLI**: Both command-line interface and FastAPI web service
+- **Multiple Formats**: Output in text, JSON, or SRT subtitle format
+- **Optimized**: Uses `faster-whisper` for 2-4x speed improvement
+- **Flexible**: Configurable compute types and device selection
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -51,7 +51,7 @@ docker run --gpus all -p 8000:8000 -v $(pwd):/app whisper-transcriber \
 
 Then visit `http://localhost:8000/docs` for interactive API documentation.
 
-## 📖 Detailed Usage
+## Detailed Usage
 
 ### Command Line Interface
 
@@ -125,7 +125,7 @@ curl -X POST "http://localhost:8000/transcribe" \
 }
 ```
 
-## ⚡ Performance Benchmarks
+## Performance Benchmarks
 
 | Model Size | GPU Memory | Speed (RTF) | Quality |
 |------------|------------|-------------|---------|
@@ -139,7 +139,7 @@ curl -X POST "http://localhost:8000/transcribe" \
 
 *RTF = Real Time Factor (1.0x = real-time, 0.1x = 10x faster than real-time)*
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
@@ -154,7 +154,7 @@ curl -X POST "http://localhost:8000/transcribe" \
                        └──────────────────┘
 ```
 
-## 🔧 Configuration
+## Configuration
 
 ### Environment Variables
 
@@ -188,7 +188,7 @@ services:
               capabilities: [gpu]
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 whisper-docker-transcriber/
@@ -201,7 +201,7 @@ whisper-docker-transcriber/
     └── sample_audio.mp3   # Example audio for testing
 ```
 
-## 🛠️ Development
+## Development
 
 ### Local Development
 
@@ -226,7 +226,7 @@ docker build --build-arg CUDA_VERSION=11.8 -t whisper-transcriber:11.8 .
 docker build --build-arg DEVICE=cpu -t whisper-transcriber:cpu .
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -250,7 +250,7 @@ docker run --gpus all -v $(pwd):/app whisper-transcriber \
   /app/audio.mp3 --device cuda --compute-type float16
 ```
 
-## 📊 Supported Formats
+## Supported Formats
 
 ### Input Audio Formats
 - MP3, WAV, M4A, FLAC, OGG, AAC
@@ -261,7 +261,7 @@ docker run --gpus all -v $(pwd):/app whisper-transcriber \
 - **JSON**: Structured data with metadata
 - **SRT**: SubRip subtitle format for video players
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -269,22 +269,22 @@ docker run --gpus all -v $(pwd):/app whisper-transcriber \
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [OpenAI Whisper](https://github.com/openai/whisper) - The original Whisper model
 - [Faster-Whisper](https://github.com/SYSTRAN/faster-whisper) - Optimized Whisper implementation
 - [NVIDIA CUDA](https://developer.nvidia.com/cuda-toolkit) - GPU acceleration support
 
-## 📞 Support
+## Support
 
-- 🐛 **Issues**: [GitHub Issues](https://github.com/yourusername/whisper-docker-transcriber/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/yourusername/whisper-docker-transcriber/discussions)
-- 📧 **Email**: your.email@example.com
+- **Issues**: [GitHub Issues](https://github.com/yourusername/whisper-docker-transcriber/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/yourusername/whisper-docker-transcriber/discussions)
+- **Email**: your.email@example.com
 
 ---
 
-**Made with ❤️ for the open-source community**
+**Made with love for the open-source community**
